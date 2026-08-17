@@ -178,6 +178,9 @@ tools:
   http-status-codes:
     title: HTTP 状态码
     description: 所有HTTP状态的列表对其名称和含义解释。
+    searchPlaceholder: 搜索 HTTP 状态...
+    searchResults: 搜索结果
+    forType: 适用于 {type}。
 
   yaml-prettify:
     title: YAML美化和格式化
@@ -194,6 +197,23 @@ tools:
   base64-string-converter:
     title: Base64 字符串编码/解码
     description: 将字符串编码和解码为其 Base64 格式表示形式即可。
+    encodeTitle: 字符串转 Base64
+    decodeTitle: Base64 转字符串
+    encodeUrlSafe: URL 安全编码
+    decodeUrlSafe: URL 安全解码
+    inputLabel: 要编码的字符串
+    inputPlaceholder: 在这里输入你的字符串...
+    encodedLabel: 字符串的 Base64
+    encodedPlaceholder: 字符串的 Base64 编码将显示在这里
+    decodeInputLabel: 要解码的 Base64 字符串
+    decodeInputPlaceholder: 你的 Base64 字符串...
+    decodedLabel: 解码后的字符串
+    decodedPlaceholder: 解码后的字符串将显示在这里
+    invalidBase64: 无效的 Base64 字符串
+    base64Copied: Base64 字符串已复制到剪贴板
+    decodedCopied: 字符串已复制到剪贴板
+    copyBase64: 复制 Base64
+    copyDecoded: 复制解码后的字符串
 
   toml-to-yaml:
     title: TOML 到 YAML
@@ -217,6 +237,17 @@ tools:
   html-entities:
     title: 转义html实体
     description: 转义或unescape html实体（将<、>、&、“和\'替换为其html版本）
+    escapeTitle: 转义 HTML 实体
+    unescapeTitle: 反转义 HTML 实体
+    inputLabel: 你的字符串
+    inputPlaceholder: 要转义的字符串
+    escapedLabel: 转义后的字符串
+    escapedPlaceholder: 转义后的字符串
+    unescapeInputLabel: 你的转义字符串
+    unescapeInputPlaceholder: 要反转义的字符串
+    unescapedLabel: 反转义后的字符串
+    unescapedPlaceholder: 反转义后的字符串
+    copy: 复制
 
   json-prettify:
     title: JSON美化和格式化
@@ -275,6 +306,11 @@ tools:
   jwt-parser:
     title: JWT 解析器
     description: 解析和解码JSON Web Token（jwt）并显示其内容。
+    inputLabel: 要解码的 JWT
+    inputPlaceholder: 在这里输入你的 token...
+    invalidJwt: 无效的 JWT
+    header: 头部
+    payload: 载荷
 
   json-to-toml:
     title: JSON 转 TOML
@@ -335,3 +371,17 @@ tools:
   url-encoder:
     title: 编码/解码url格式的字符串
     description: 编码为url编码格式（也称为“百分比编码”）或从中解码。
+    encode: 编码
+    decode: 解码
+    inputLabel: 你的字符串
+    inputPlaceholder: 要编码的字符串
+    encodedLabel: 编码后的字符串
+    encodedPlaceholder: 编码后的字符串
+    decodeInputLabel: 你的编码字符串
+    decodeInputPlaceholder: 要解码的字符串
+    decodedLabel: 解码后的字符串
+    decodedPlaceholder: 解码后的字符串
+    invalidString: 无法解析该字符串
+    encodedCopied: 编码后的字符串已复制到剪贴板
+    decodedCopied: 解码后的字符串已复制到剪贴板
+    copy: 复制

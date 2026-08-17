@@ -178,6 +178,9 @@ tools:
   http-status-codes:
     title: HTTP status codes
     description: The list of all HTTP status codes, their name, and their meaning.
+    searchPlaceholder: Search http status...
+    searchResults: Search results
+    forType: For {type}.
 
   yaml-prettify:
     title: YAML prettify and format
@@ -194,6 +197,23 @@ tools:
   base64-string-converter:
     title: Base64 string encoder/decoder
     description: Simply encode and decode strings into their base64 representation.
+    encodeTitle: String to base64
+    decodeTitle: Base64 to string
+    encodeUrlSafe: Encode URL safe
+    decodeUrlSafe: Decode URL safe
+    inputLabel: String to encode
+    inputPlaceholder: Put your string here...
+    encodedLabel: Base64 of string
+    encodedPlaceholder: The base64 encoding of your string will be here
+    decodeInputLabel: Base64 string to decode
+    decodeInputPlaceholder: Your base64 string...
+    decodedLabel: Decoded string
+    decodedPlaceholder: The decoded string will be here
+    invalidBase64: Invalid base64 string
+    base64Copied: Base64 string copied to the clipboard
+    decodedCopied: String copied to the clipboard
+    copyBase64: Copy base64
+    copyDecoded: Copy decoded string
 
   toml-to-yaml:
     title: TOML to YAML
@@ -217,6 +237,17 @@ tools:
   html-entities:
     title: Escape HTML entities
     description: Escape or unescape HTML entities (replace characters like <,>, &, " and \' with their HTML version)
+    escapeTitle: Escape html entities
+    unescapeTitle: Unescape html entities
+    inputLabel: Your string
+    inputPlaceholder: The string to escape
+    escapedLabel: Your string escaped
+    escapedPlaceholder: Your string escaped
+    unescapeInputLabel: Your escaped string
+    unescapeInputPlaceholder: The string to unescape
+    unescapedLabel: Your string unescaped
+    unescapedPlaceholder: Your string unescaped
+    copy: Copy
 
   json-prettify:
     title: JSON prettify and format
@@ -276,6 +307,11 @@ tools:
   jwt-parser:
     title: JWT parser
     description: Parse and decode your JSON Web Token (jwt) and display its content.
+    inputLabel: JWT to decode
+    inputPlaceholder: Put your token here...
+    invalidJwt: Invalid JWT
+    header: Header
+    payload: Payload
 
   json-to-toml:
     title: JSON to TOML
@@ -336,3 +372,17 @@ tools:
   url-encoder:
     title: Encode/decode URL-formatted strings
     description: Encode text to URL-encoded format (also known as "percent-encoded"), or decode from it.
+    encode: Encode
+    decode: Decode
+    inputLabel: Your string
+    inputPlaceholder: The string to encode
+    encodedLabel: Your string encoded
+    encodedPlaceholder: Your string encoded
+    decodeInputLabel: Your encoded string
+    decodeInputPlaceholder: The string to decode
+    decodedLabel: Your string decoded
+    decodedPlaceholder: Your string decoded
+    invalidString: Impossible to parse this string
+    encodedCopied: Encoded string copied to the clipboard
+    decodedCopied: Decoded string copied to the clipboard
+    copy: Copy

@@ -2,6 +2,8 @@
 import { codesByCategories } from './http-status-codes.constants';
 import { useFuzzySearch } from '@/composable/fuzzySearch';
 
+const { t } = useI18n();
+
 const search = ref('');
 
 const { searchResult } = useFuzzySearch({
@@ -17,7 +19,7 @@ const codesByCategoryFiltered = computed(() => {
     return codesByCategories;
   }
 
-  return [{ category: 'Search results', codes: searchResult.value }];
+  return [{ category: t('tools.http-status-codes.searchResults'), codes: searchResult.value }];
 });
 </script>
 
@@ -25,7 +27,7 @@ const codesByCategoryFiltered = computed(() => {
   <div>
     <c-input-text
       v-model:value="search"
-      placeholder="Search http status..."
+      :placeholder="t('tools.http-status-codes.searchPlaceholder')"
       autofocus raw-text mb-10
     />
 
@@ -39,7 +41,7 @@ const codesByCategoryFiltered = computed(() => {
           {{ code }} {{ name }}
         </div>
         <div op-70>
-          {{ description }} {{ type !== 'HTTP' ? `For ${type}.` : '' }}
+          {{ description }} {{ type !== 'HTTP' ? t('tools.http-status-codes.forType', { type }) : '' }}
         </div>
       </c-card>
     </div>
