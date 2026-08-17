@@ -1,0 +1,118 @@
+home:
+  categories:
+    newestTools: Công cụ mới nhất
+    favoriteTools: 'Công cụ yêu thích của bạn'
+    allTools: 'Tất cả công cụ'
+    favoritesDndToolTip: 'Kéo thả để sắp xếp lại yêu thích'
+  subtitle: 'Bàn làm việc dữ liệu frontend'
+  toggleMenu: 'Chuyển đổi menu'
+  home: Trang chủ
+  uiLib: 'Thư viện UI'
+  nav:
+    about: 'Về DataForge'
+    aboutLabel: 'Giới thiệu'
+    darkMode: 'Chế độ tối'
+    lightMode: 'Chế độ sáng'
+    mode: 'Chuyển đổi chế độ tối/sáng'
+about:
+  content: >-
+    # Về DataForge
+    
+    DataForge là một bàn làm việc dữ liệu dành cho nhà phát triển frontend: dán một mẩu dữ liệu lộn xộn, rồi định dạng, so sánh, chuyển đổi định dạng và tạo kiểu TypeScript — tất cả ở một nơi.
+    
+    Dự án này là sự phát triển thứ cấp của dự án mã nguồn mở IT-Tools (GPL-3.0). Nó giữ lại nền tảng kỹ thuật (Vue 3, TypeScript, Vite, Naive UI, kiểm thử và triển khai) trong khi tổ chức lại sản phẩm xoay quanh xử lý dữ liệu.
+    
+    ## Công nghệ
+    
+    Vue 3 · TypeScript · Vite · Pinia · Naive UI · UnoCSS · vue-i18n · Vitest · Playwright
+404:
+  notFound: '404 Không Tìm Thấy'
+  sorry: 'Xin lỗi, trang này dường như không tồn tại'
+  maybe: 'Lỗi xảy ra có thể do bộ nhớ đệm, hãy (CTRL + F5) để tải lại trang?'
+  backHome: 'Quay về trang chủ'
+favoriteButton:
+  remove: 'Xóa khỏi mục yêu thích'
+  add: 'Thêm vào mục yêu thích'
+toolCard:
+  new: Mới
+search:
+  label: Tìm kiếm
+tools:
+  categories:
+    favorite-tools: 'Công cụ yêu thích của bạn'
+    data-formatting: 'Định dạng'
+    data-conversion: 'Chuyển đổi'
+    diff: 'So sánh'
+    encoding: 'Mã hóa'
+    api: 'Trợ giúp API'
+
+  json-to-csv:
+    title: Chuyển đổi JSON thành CSV
+    description: Chuyển đổi JSON thành CSV với việc tự động phát hiện tiêu đề.
+
+  http-status-codes:
+    title: Mã trạng thái HTTP
+    description: Danh sách tất cả các mã trạng thái HTTP, tên và ý nghĩa của chúng.
+
+  yaml-prettify:
+    title: Định dạng và làm đẹp YAML
+    description: Định dạng chuỗi YAML của bạn thành một định dạng dễ đọc và thân thiện với con người.
+
+  base64-string-converter:
+    title: Trình mã hóa/giải mã chuỗi Base64
+    description: Đơn giản mã hóa và giải mã chuỗi thành mã Base64.
+  toml-to-yaml:
+    title: Chuyển đổi TOML thành YAML
+    description: Phân tích và chuyển đổi TOML thành YAML.
+
+  json-to-yaml-converter:
+    title: Chuyển đổi JSON sang YAML
+    description: Chuyển đổi đơn giản JSON sang YAML với công cụ chuyển đổi trực tuyến này.
+
+  html-entities:
+    title: Thay thế các ký tự HTML
+    description: Thay thế hoặc bỏ thẻ các ký tự HTML (thay thế <,>, &, " và \' thành phiên bản HTML tương ứng)
+
+  json-prettify:
+    title: Định dạng và làm đẹp JSON
+    description: Định dạng chuỗi JSON của bạn thành một định dạng dễ đọc và thân thiện với con người.
+
+  toml-to-json:
+    title: Chuyển đổi TOML thành JSON
+    description: Phân tích và chuyển đổi TOML thành JSON.
+
+  xml-formatter:
+    title: Định dạng XML
+    description: Định dạng chuỗi XML của bạn thành một định dạng dễ đọc và thân thiện với con người.
+
+  yaml-to-toml:
+    title: YAML sang TOML
+    description: Phân tích và chuyển đổi YAML sang TOML.
+
+  json-diff:
+    title: So sánh JSON
+    description: So sánh hai đối tượng JSON và lấy ra sự khác biệt giữa chúng.
+
+  jwt-parser:
+    title: Giải mã JWT
+    description: Giải mã và hiển thị nội dung của JSON Web Token (jwt).
+
+  json-to-toml:
+    title: Chuyển đổi JSON sang TOML
+    description: Phân tích và chuyển đổi JSON sang TOML.
+
+  json-minify:
+    title: Giảm kích thước JSON
+    description: Giảm kích thước và nén JSON của bạn bằng cách loại bỏ khoảng trắng không cần thiết.
+
+  yaml-to-json-converter:
+    title: Trình chuyển đổi YAML sang JSON
+    description: Chuyển đổi YAML sang JSON một cách đơn giản với công cụ chuyển đổi trực tuyến này.
+
+  text-diff:
+    title: So sánh văn bản
+    description: So sánh hai văn bản và xem sự khác biệt giữa chúng.
+
+  url-encoder:
+    title: Mã hóa/giải mã chuỗi định dạng URL
+    description: Mã hóa thành định dạng URL (còn được gọi là "percent-encoded") hoặc giải mã từ đó.

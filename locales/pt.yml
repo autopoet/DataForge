@@ -1,0 +1,47 @@
+home:
+  categories:
+    newestTools: 'Novas ferramentas'
+    favoriteTools: 'Suas ferramentas favoritas'
+    allTools: 'Todas as ferramentas'
+    favoritesDndToolTip: 'Arraste e solte para reordenar favoritos'
+  subtitle: 'Bancada de dados frontend'
+  toggleMenu: 'Menu'
+  home: 'Início'
+  uiLib: 'Biblioteca de UI'
+  nav:
+    about: 'Sobre o DataForge'
+    aboutLabel: 'Sobre'
+    darkMode: 'Modo Escuro'
+    lightMode: 'Modo Claro'
+    mode: 'Trocar modo escuro/claro'
+about:
+  content: >-
+    # Sobre o DataForge
+    
+    O DataForge é uma bancada de dados para desenvolvedores frontend: cole um dado bagunçado e formate, compare, converta o formato e gere tipos TypeScript — tudo em um só lugar.
+    
+    Este projeto é um desenvolvimento secundário do projeto open source IT-Tools (GPL-3.0). Ele mantém sua base de engenharia (Vue 3, TypeScript, Vite, Naive UI, testes e deploy) enquanto reorganiza o produto em torno do processamento de dados.
+    
+    ## Stack de tecnologia
+    
+    Vue 3 · TypeScript · Vite · Pinia · Naive UI · UnoCSS · vue-i18n · Vitest · Playwright
+404:
+  notFound: '404 Não Encontrado'
+  sorry: 'Desculpe, parece que essa página não existe'
+  maybe: 'Talvez o cache esteja fazendo bobagem, que tal tentar forçar a atualização?'
+  backHome: 'Voltar para o início'
+favoriteButton:
+  remove: 'Remover dos favoritos'
+  add: 'Adicionar aos favoritos'
+toolCard:
+  new: 'Novo'
+search:
+  label: 'Pesquisar'
+tools:
+  categories:
+    favorite-tools: 'Suas ferramentas favoritas'
+    data-formatting: Formatação
+    data-conversion: Conversão
+    diff: Comparar
+    encoding: Codificação
+    api: 'Auxílios API'

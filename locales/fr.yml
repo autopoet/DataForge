@@ -1,0 +1,44 @@
+home:
+  categories:
+    newestTools: 'Les nouveaux outils'
+    favoriteTools: 'Vos outils favoris'
+    allTools: 'Tous les outils'
+    favoritesDndToolTip: 'Faites glisser et déposez pour réordonner vos favoris'
+  subtitle: 'Atelier de données frontend'
+  toggleMenu: 'Menu'
+  home: Accueil
+  uiLib: 'UI Lib'
+  nav:
+    about: 'À propos de DataForge'
+    aboutLabel: 'À propos'
+    darkMode: 'Mode sombre'
+    lightMode: 'Mode clair'
+    mode: 'Basculer le mode sombre/clair'
+about:
+  content: >-
+    # À propos de DataForge
+    
+    DataForge est un atelier de données pour les développeurs frontend : collez une donnée désordonnée, puis formatez-la, comparez-la, convertissez son format et générez des types TypeScript — le tout au même endroit.
+    
+    Ce projet est un développement secondaire du projet open source IT-Tools (GPL-3.0). Il conserve son socle technique (Vue 3, TypeScript, Vite, Naive UI, tests et déploiement) tout en réorganisant le produit autour du traitement des données.
+    
+    ## Stack technique
+    
+    Vue 3 · TypeScript · Vite · Pinia · Naive UI · UnoCSS · vue-i18n · Vitest · Playwright
+404:
+  notFound: '404 Not Found'
+  sorry: "Désolé, cette page n'existe pas"
+  maybe: 'Peut-être que le cache fait des siennes, essayez de forcer le rafraîchissement ?'
+  backHome: "Retour à l'accueil"
+toolCard:
+  new: Nouveau
+search:
+  label: Rechercher
+tools:
+  categories:
+    favorite-tools: 'Vos outils favoris'
+    data-formatting: Formatage
+    data-conversion: Conversion
+    diff: Comparer
+    encoding: Encodage
+    api: 'Aides API'

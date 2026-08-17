@@ -1,0 +1,6 @@
+/* TEAM */
+Developer: autopoet
+Project: DataForge
+
+/* THANKS */
+Based on the open-source project IT-Tools (GPL-3.0) by Corentin Thomasset

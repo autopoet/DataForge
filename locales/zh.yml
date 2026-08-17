@@ -1,0 +1,337 @@
+home:
+  categories:
+    newestTools: '最新工具'
+    favoriteTools: '我的收藏'
+    allTools: '全部工具'
+    favoritesDndToolTip: '拖放重新排列收藏夹'
+  hero:
+    openWorkbench: '打开工作台'
+    openTypeGenerator: '生成 TypeScript 类型'
+  toggleMenu: '切换菜单'
+  home: '主页'
+  uiLib: 'UI 库'
+  nav:
+    about: '关于 DataForge'
+    aboutLabel: '关于'
+    darkMode: '深色模式'
+    lightMode: '浅色模式'
+    mode: '颜色模式'
+about:
+  content: >-
+    # 关于 DataForge
+
+    DataForge 是给前端开发者的数据工作台：粘贴一份混乱的数据，格式化、对比、转换格式、生成 TypeScript 类型，一站式完成。
+
+    本项目基于开源项目 IT-Tools（GPL-3.0）进行二次开发，保留其工程底座（Vue 3、TypeScript、Vite、Naive UI、测试与部署体系），围绕"数据处理"重新组织产品，并新增了 JSON 转 TypeScript 等能力。
+
+    ## 功能
+
+    - **数据工作台**：格式自动检测、多层编码 JSON 一键解码、格式化 / 压缩 / 转换（YAML / TOML / XML / CSV）、TypeScript 类型视图、文件导入导出、历史快照与对比。
+    - **TypeScript 类型生成器**：从 JSON 推导嵌套 interface / type 声明，支持可选字段、字面量联合与命名冲突处理。
+    - **专项工具**：JSON / XML / YAML 格式化、9 种格式转换、JSON 与文本对比、URL / Base64 / HTML 实体编码、JWT 解析、HTTP 状态码。
+
+    ## 路线图
+
+    - Phase 2：结构推导引擎 —— JSON Schema 推导与 Mock 数据生成，与类型生成器共用结构分析核心。
+    - Phase 3：性能验证与打磨 —— 大数据场景优化与文档完善。
+
+    ## 技术栈
+
+    Vue 3 · TypeScript · Vite · Pinia · Naive UI · UnoCSS · vue-i18n · Vitest · Playwright
+404:
+  notFound: '404 页面不存在'
+  sorry: '抱歉，该页面似乎不存在'
+  maybe: '也许缓存出现了一些问题，试试强制刷新页面？'
+  backHome: '返回主页'
+copy:
+  tooltip: '复制到剪贴板'
+  copied: '已复制！'
+  success: '已复制到剪贴板'
+  download: '下载'
+favoriteButton:
+  remove: '取消收藏'
+  add: '加入收藏'
+toolCard:
+  new: '新'
+openInWorkbench:
+  label: '在工作台打开'
+search:
+  label: '搜索'
+tools:
+  categories:
+    favorite-tools: '我的收藏'
+    workbench: '工作台'
+    generation: '生成'
+    data-formatting: '格式化'
+    data-conversion: '格式转换'
+    diff: '对比'
+    encoding: '编码解码'
+    api: '联调参考'
+
+  workbench:
+    title: 数据工作台
+    description: 粘贴一份混乱的数据，格式化、压缩、转换格式、生成 TypeScript 类型，一站式完成。
+    inputPlaceholder: |-
+      {'{'}"code": 200, "data": {'{'}"list": [1, 2, 3]{'}'}, "msg": "ok"{'}'}
+    toolbar:
+      clear: 清空
+    format:
+      auto: 自动
+      json: JSON
+      yaml: YAML
+      toml: TOML
+      xml: XML
+      csv: CSV
+    status:
+      size: '{size} B · {lines} 行'
+      badgeHigh: '检测到 {format}'
+      badgeLow: '检测到 {format} · 低置信度'
+      badgeOverride: '{format}（手动指定）'
+      parseError: '无法按 {format} 解析：{error}'
+      lowConfidenceHint: 检测置信度较低，可点击上方格式按钮手动指定。
+    views:
+      formatted: 格式化
+      minified: 压缩
+      typescript: TypeScript
+      yaml: YAML
+      toml: TOML
+      xml: XML
+      csv: CSV
+      csvOptions:
+        flatten: 展开嵌套字段
+      disabled:
+        noData: 暂无可解析的数据——粘贴数据后可启用此视图。
+        text: 纯文本没有结构化数据，此视图不可用。
+        csv: 'CSV 输入没有「{view}」视图。'
+        sameFormat: 输入已是「{view}」格式，无需转换。
+        notArrayOfObjects: CSV 视图需要对象数组数据。
+    decode:
+      banner: '检测到输入像是被编码过的 JSON 字符串（约 {count} 层）'
+      decodeOne: 解码一层
+      decodeAll: 全部解码
+    import:
+      label: 导入文件
+      dropHint: 松开导入文件
+      unsupportedType: 不支持该文件类型（支持 .json/.yaml/.toml/.xml/.csv/.txt）
+      confirmTitle: 导入大文件
+      largeFileConfirm: 文件超过 1MB，导入大文件可能导致页面卡顿。仍要导入吗？
+      confirm: 继续导入
+      cancel: 取消
+      tooLarge: 文件超过 10MB，超出工作台可处理的上限。
+    output:
+      empty: 检测到有效输入后，此处将显示视图输出。
+      renderFailed: 视图生成失败
+      copy: 复制
+      download: 下载
+      openInTypeGenerator: 在专项页打开
+    history:
+      open: '历史 ({count})'
+      title: 历史快照
+      empty: 暂无历史快照——输入数据后会自动记录。
+      quota: '已用 {used} / {max} · 共 {size} KB'
+      restore: 恢复
+      compare: 对比
+      delete: 删除
+      clear: 清空历史
+      truncated: 快照内容过大已截断，无法恢复或对比。
+      clearConfirmTitle: 清空全部历史？
+      clearConfirmContent: 将删除全部 {count} 条历史快照，此操作不可撤销。
+      confirm: 确认
+      cancel: 取消
+      diffTitle: 快照与当前输入对比
+      diffUnavailable: 快照或当前输入无法解析为结构化数据，无法对比。
+      swap: 交换左右
+    copySuccess: 已复制到剪贴板
+
+  type-generator:
+    title: TypeScript 类型生成器
+    description: 从 JSON 数据生成 TypeScript 类型定义
+    inputLabel: 你的 JSON
+    inputPlaceholder: |-
+      {'{'}
+        "name": "DataForge",
+        "users": [
+          {'{'} "id": 1, "role": "admin" {'}'},
+          {'{'} "id": 2, "role": "viewer" {'}'}
+        ]
+      {'}'}
+    outputLabel: 生成的 TypeScript 类型
+    invalidJson: 提供的 JSON 无效。
+    openInWorkbench: 在工作台打开
+    largeInputWarning: 输入超过 1MB，类型生成可能较慢。
+    options:
+      rootName: 根类型名
+      style: 输出风格
+      exportKeyword: 导出关键字
+      literalUnionMax: 字面量联合上限
+
+  json-to-csv:
+    title: JSON 转 CSV
+    description: 使用自动标头检测将JSON转换为CSV。
+    inputLabel: 你的原始 JSON
+    inputPlaceholder: |-
+      [{'{'}"id": 1, "name": "ada"{'}'}, {'{'}"id": 2, "name": "linus"{'}'}]
+    outputLabel: 由 JSON 转换的 CSV
+    flatten: 展开嵌套对象
+    invalidJson: 提供的 JSON 无效。
+
+  http-status-codes:
+    title: HTTP 状态码
+    description: 所有HTTP状态的列表对其名称和含义解释。
+
+  yaml-prettify:
+    title: YAML美化和格式化
+    description: 将YAML字符串修饰为友好的可读格式。
+    inputLabel: 你的原始 YAML
+    inputPlaceholder: |-
+      name: DataForge
+      active: true
+    outputLabel: 格式化后的 YAML
+    sortKeys: 键排序
+    indentSize: 缩进大小
+    invalidYaml: 提供的 YAML 无效。
+
+  base64-string-converter:
+    title: Base64 字符串编码/解码
+    description: 将字符串编码和解码为其 Base64 格式表示形式即可。
+
+  toml-to-yaml:
+    title: TOML 到 YAML
+    description: Parse and convert TOML to YAML.
+    inputLabel: 你的 TOML
+    inputPlaceholder: |-
+      name = "DataForge"
+      port = 8080
+    outputLabel: 由 TOML 转换的 YAML
+    invalidToml: 提供的 TOML 无效。
+
+  json-to-yaml-converter:
+    title: JSON到YAML转换器
+    description: 在线转换将JSON转换为YAML。
+    inputLabel: 你的 JSON
+    inputPlaceholder: |-
+      {'{'}"name": "DataForge", "version": "1.0", "tags": ["json", "yaml"]{'}'}
+    outputLabel: 由 JSON 转换的 YAML
+    invalidJson: 提供的 JSON 无效。
+
+  html-entities:
+    title: 转义html实体
+    description: 转义或unescape html实体（将<、>、&、“和\'替换为其html版本）
+
+  json-prettify:
+    title: JSON美化和格式化
+    description: 将JSON字符串修饰为友好的可读格式。
+    inputLabel: 你的原始 JSON
+    inputPlaceholder: |-
+      {'{'}"name": "DataForge", "active": true{'}'}
+    outputLabel: 格式化后的 JSON
+    sortKeys: 键排序
+    indentSize: 缩进大小
+    invalidJson: 提供的 JSON 无效。
+
+  toml-to-json:
+    title: TOML 到 JSON
+    description: 解析TOML并将其转换为JSON。
+    inputLabel: 你的 TOML
+    inputPlaceholder: |-
+      name = "DataForge"
+      port = 8080
+    outputLabel: 由 TOML 转换的 JSON
+    invalidToml: 提供的 TOML 无效。
+
+  xml-formatter:
+    title: XML 格式化
+    description: 将XML字符串修饰为友好的可读格式。
+    inputLabel: 你的 XML
+    inputPlaceholder: |-
+      <note><to>you</to><body>hi</body></note>
+    outputLabel: 格式化后的 XML
+    collapseContent: 折叠内容
+    indentSize: 缩进大小
+    invalidXml: 提供的 XML 无效。
+
+  yaml-to-toml:
+    title: YAML 到 TOML
+    description: 解析YAML并将其转换为TOML。
+    inputLabel: 你的 YAML
+    inputPlaceholder: |-
+      name: DataForge
+      port: 8080
+    outputLabel: 由 YAML 转换的 TOML
+    invalidYaml: 提供的 YAML 无效。
+
+  json-diff:
+    title: JSON 差异比较
+    description: 比较两个JSON对象并获得它们之间的差异。
+    leftLabel: 第一个 JSON
+    leftPlaceholder: |-
+      {'{'}"id": 1, "status": "ok"{'}'}
+    rightLabel: 要对比的 JSON
+    rightPlaceholder: |-
+      {'{'}"id": 1, "status": "error", "extra": true{'}'}
+    invalidJson: JSON 格式无效
+    onlyShowDifferences: 只看差异
+    sameResult: 两个 JSON 完全相同
+  jwt-parser:
+    title: JWT 解析器
+    description: 解析和解码JSON Web Token（jwt）并显示其内容。
+
+  json-to-toml:
+    title: JSON 转 TOML
+    description: 解析JSON并将其转换为TOML。
+    inputLabel: 你的 JSON
+    inputPlaceholder: |-
+      {'{'}"name": "DataForge", "port": 8080, "tags": ["json", "toml"]{'}'}
+    outputLabel: 由 JSON 转换的 TOML
+    invalidJson: 提供的 JSON 无效。
+
+  json-minify:
+    title: JSON 压缩
+    description: 通过删除不必要的空白来缩小和压缩JSON。
+    inputLabel: 你的原始 JSON
+    inputPlaceholder: |-
+      {'{'}"name": "DataForge", "tags": ["json"]{'}'}
+    outputLabel: 压缩后的 JSON
+    invalidJson: 提供的 JSON 无效。
+
+  yaml-to-json-converter:
+    title: YAML到JSON转换器
+    description: 使用此在线转换器将YAML转换为JSON。
+    inputLabel: 你的 YAML
+    inputPlaceholder: |-
+      name: DataForge
+      port: 8080
+    outputLabel: 由 YAML 转换的 JSON
+    invalidYaml: 提供的 YAML 无效。
+
+  json-to-xml:
+    title: JSON 转 XML
+    description: 将 JSON 数据转换为 XML。
+    inputLabel: 你的 JSON 数据
+    inputPlaceholder: |-
+      {'{'}"note": {'{'}"to": "you", "from": "me"{'}'}{'}'}
+    outputLabel: 转换后的 XML
+    invalidJson: 提供的 JSON 无效。
+
+  xml-to-json:
+    title: XML 转 JSON
+    description: 将 XML 数据转换为 JSON。
+    inputLabel: 你的 XML 数据
+    inputPlaceholder: |-
+      <note><to>you</to><from>me</from></note>
+    outputLabel: 转换后的 JSON
+    invalidXml: 提供的 XML 无效。
+
+  text-diff:
+    title: 文本比较
+    description: 比较两个文本并查看它们之间的差异。
+    leftLabel: 原始文本
+    leftPlaceholder: |-
+      const name = 'alice';
+    rightLabel: 修改后的文本
+    rightPlaceholder: |-
+      const name = 'alice bob';
+
+  url-encoder:
+    title: 编码/解码url格式的字符串
+    description: 编码为url编码格式（也称为“百分比编码”）或从中解码。

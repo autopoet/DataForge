@@ -1,0 +1,111 @@
+'404':
+  notFound: 404 Nicht gefunden
+  sorry: Entschuldigung, diese Seite scheint nicht zu existieren
+  maybe: >-
+    Vielleicht macht der Cache etwas Seltsames. Mit einem erzwungenen Neuladen
+    versuchen?
+  backHome: Zurück zur Startseite
+home:
+  categories:
+    newestTools: Neueste Tools
+    favoriteTools: Deine Lieblingstools
+    allTools: Alle Tools
+    favoritesDndToolTip: 'Ziehen und Ablegen, um Favoriten neu zu ordnen'
+  subtitle: 'Frontend-Daten-Workbench'
+  toggleMenu: Menü umschalten
+  home: Startseite
+  uiLib: UI-Bibliothek
+  nav:
+    about: 'Über DataForge'
+    aboutLabel: Über
+    darkMode: Dunkelmodus
+    lightMode: Hellmodus
+    mode: Wechseln zwischen dunklem/hellem Modus
+about:
+  content: >-
+    # Über DataForge
+    
+    DataForge ist eine Daten-Workbench für Frontend-Entwickler: Fügen Sie ein unübersichtliches Datenstück ein und formatieren, vergleichen und konvertieren Sie es und generieren Sie TypeScript-Typen — alles an einem Ort.
+    
+    Dieses Projekt ist eine Weiterentwicklung des Open-Source-Projekts IT-Tools (GPL-3.0). Es übernimmt dessen technische Grundlage (Vue 3, TypeScript, Vite, Naive UI, Test- und Deployment-Setup) und organisiert das Produkt neu rund um die Datenverarbeitung.
+    
+    ## Tech-Stack
+    
+    Vue 3 · TypeScript · Vite · Pinia · Naive UI · UnoCSS · vue-i18n · Vitest · Playwright
+favoriteButton:
+  remove: Aus Favoriten entfernen
+  add: Zu Favoriten hinzufügen
+toolCard:
+  new: Neu
+search:
+  label: Suche
+tools:
+  categories:
+    favorite-tools: Deine Lieblingstools
+    data-formatting: Formatierung
+    data-conversion: Konvertierung
+    diff: Vergleichen
+    encoding: Kodierung
+    api: 'API-Helfer'
+  json-to-csv:
+    title: JSON zu CSV
+    description: Konvertiere JSON mit automatischer Headererkennung in CSV.
+  http-status-codes:
+    title: HTTP-Statuscodes
+    description: Liste aller HTTP-Statuscodes, ihrer Namen und ihrer Bedeutung.
+  yaml-prettify:
+    title: YAML verschönern und formatieren
+    description: Verschönere deinen YAML-String in ein menschenlesbares Format.
+  base64-string-converter:
+    title: Base64-String-Encoder/Decoder
+    description: Codiere und decodiere Strings einfach in ihre Base64-Repräsentation.
+  toml-to-yaml:
+    title: TOML zu YAML
+    description: Parse und konvertiere TOML zu YAML.
+  json-to-yaml-converter:
+    title: JSON zu YAML
+    description: Konvertiere JSON einfach in YAML mit diesem Live-Online-Konverter.
+  html-entities:
+    title: HTML-Entity-Escape
+    description: >-
+      Escape oder unescape HTML-Entitäten (ersetze <, >, &, " und ' durch ihre
+      HTML-Version).
+  json-prettify:
+    title: JSON verschönern und formatieren
+    description: Verschönere deinen JSON-String in ein menschenlesbares Format.
+  toml-to-json:
+    title: TOML zu JSON
+    description: Parse und konvertiere TOML zu JSON.
+  xml-formatter:
+    title: XML-Formatter
+    description: Verschönere deinen XML-String in ein menschenlesbares Format.
+  yaml-to-toml:
+    title: YAML zu TOML
+    description: Parse und konvertiere YAML zu TOML.
+  json-diff:
+    title: JSON-Unterschied
+    description: Vergleiche zwei JSON-Objekte und erhalte die Unterschiede zwischen ihnen.
+  jwt-parser:
+    title: JWT-Parser
+    description: >-
+      Parse und decodiere deinen JSON-Web-Token (JWT) und zeige dessen Inhalt
+      an.
+  json-to-toml:
+    title: JSON zu TOML
+    description: Parse und konvertiere JSON zu TOML.
+  json-minify:
+    title: JSON minifizieren
+    description: >-
+      Minifiziere und komprimiere dein JSON, indem unnötige Leerzeichen entfernt
+      werden.
+  yaml-to-json-converter:
+    title: YAML zu JSON
+    description: Konvertiere YAML einfach in JSON mit diesem Live-Online-Konverter.
+  text-diff:
+    title: Textunterschied
+    description: Vergleiche zwei Texte und sieh die Unterschiede zwischen ihnen.
+  url-encoder:
+    title: Kodieren/Decodieren von URL-formatierten Zeichenfolgen
+    description: >-
+      Kodiere zum URL-kodierten Format (auch als "prozentkodiert" bekannt) oder
+      decodiere es.

@@ -1,0 +1,119 @@
+home:
+  categories:
+    newestTools: Nyeste verktøy
+    favoriteTools: 'Dine favoritt verktøy'
+    allTools: 'Alle verktøyene'
+    favoritesDndToolTip: 'Dra og slipp for å omordne favoritter'
+  subtitle: 'Frontend-dataversksted'
+  toggleMenu: 'Vekslemenmy'
+  home: Hjem
+  uiLib: 'UI Bib'
+  nav:
+    about: 'Om DataForge'
+    aboutLabel: 'Om'
+    darkMode: 'Mørk modus'
+    lightMode: 'Lys modus'
+    mode: 'Veksle mørk/lys modus'
+about:
+  content: >-
+    # Om DataForge
+    
+    DataForge er en dataverktøykasse for frontend-utviklere: lim inn et rotete datasett, og formater, sammenlign, konverter format og generer TypeScript-typer — alt på ett sted.
+    
+    Dette prosjektet er en videreutvikling av det åpne prosjektet IT-Tools (GPL-3.0). Det beholder den tekniske basen (Vue 3, TypeScript, Vite, Naive UI, testing og deploy) mens produktet er reorganisert rundt databehandling.
+    
+    ## Teknologistabel
+    
+    Vue 3 · TypeScript · Vite · Pinia · Naive UI · UnoCSS · vue-i18n · Vitest · Playwright
+404:
+  notFound: '404 ikke funnet'
+  sorry: 'Beklager, denne siden ser ikke ut til å eksistere'
+  maybe: 'Kanskje informasjonskapslene oppfører seg rart, prøvd en tvungen oppfriskning?'
+  backHome: 'Tilbake til start'
+favoriteButton:
+  remove: 'Fjern fra favoritter'
+  add: 'Legg til favoritter'
+toolCard:
+  new: Ny
+search:
+  label: Søk
+tools:
+  categories:
+    favorite-tools: 'Dine favoritt verktøy'
+    data-formatting: Formatering
+    data-conversion: Konvertering
+    diff: Sammenlign
+    encoding: Koding
+    api: 'API-hjelpere'
+
+  json-to-csv:
+    title: JSON til CSV
+    description: Konverter JSON til CSV med automatisk oppdagelse av headeren.
+
+  http-status-codes:
+    title: HTTP status koder
+    description: Liste over alle HTTP status koder, navnet dems, og betydningen.
+
+  yaml-prettify:
+    title: YAML forskjønning og formatering
+    description: Forskjønn YAML strengene dine til et lettlest format.
+
+  base64-string-converter:
+    title: Base64 string kode/dekoder
+    description: Enkelt kode eller dekode en tekststreng til base64 representasjonen av strengen.
+
+  toml-to-yaml:
+    title: TOML til YAML
+    description: Parser og konverter TOML til YAML.
+
+  json-to-yaml-converter:
+    title: JSON til YAML konverterer
+    description: Enkelt konverter JSON til YAML med dette verktøyet.
+
+  html-entities:
+    title: HTML streng rensing
+    description: Rens bort eller omsvøp HTML entiteter (erstatt tegn som <,>, &, " and \' med deres HTML versjon).
+
+  json-prettify:
+    title: JSON forskjønning og formatering
+    description: Forskjønn JSON strenger til et lettlest format.
+
+  toml-to-json:
+    title: TOML til JSON
+    description: Parser og konverter TOML til JSON.
+
+  xml-formatter:
+    title: XML formaterer
+    description: Forskjønn en XML streng til et lettlest format.
+
+  yaml-to-toml:
+    title: YAML til TOML
+    description: Parser og konverter YAML til TOML.
+
+  json-diff:
+    title: JSON diff
+    description: Sammenlign to JSON objekter og finn forskjellene mellom dem.
+
+  jwt-parser:
+    title: JWT parser
+    description: Parse og dekode et JSON Web Token (jwt) og vis innholdet.
+
+  json-to-toml:
+    title: JSON til TOML
+    description: Parser og konverter JSON til TOML.
+
+  json-minify:
+    title: JSON minifiser
+    description: Minifiser og komprimer JSON ved å fjerne unødvendige mellomrom.
+
+  yaml-to-json-converter:
+    title: YAML til JSON konverter
+    description: Konverterl YAML til JSON.
+
+  text-diff:
+    title: Tekst diff
+    description: Sammenlign to tekster og vis forskjellen mellom dem.
+
+  url-encoder:
+    title: Kode/dekode URL-formaterte strenger
+    description: Kode tekst til URL-kodet format (også kjent som "prosent-kodet"), eller dekode fra det.

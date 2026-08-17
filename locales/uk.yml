@@ -1,0 +1,47 @@
+home:
+  categories:
+    newestTools: Найновіші інструменти
+    favoriteTools: 'Ваші улюблені інструменти'
+    allTools: 'Усі інструменти'
+    favoritesDndToolTip: 'Перетягніть і відпустіть, щоб змінити порядок улюблених'
+  subtitle: 'Фронтенд-дата-воркбенч'
+  toggleMenu: 'Перемикання меню'
+  home: Головна
+  uiLib: 'UI Бібліотека'
+  nav:
+    about: 'Про DataForge'
+    aboutLabel: 'Про нас'
+    darkMode: 'Темний режим'
+    lightMode: 'Світлий режим'
+    mode: 'Перемикання темного/світлого режиму'
+about:
+  content: >-
+    # Про DataForge
+    
+    DataForge — це робочий стіл даних для фронтенд-розробників: вставте незрозумілі дані, відформатуйте їх, порівняйте, конвертуйте у потрібний формат і згенеруйте TypeScript-типи — все в одному місці.
+    
+    Цей проєкт є вторинною розробкою відкритого проєкту IT-Tools (GPL-3.0). Він зберігає інженерну основу (Vue 3, TypeScript, Vite, Naive UI, тестування та розгортання) і переорганізовує продукт навколо обробки даних.
+    
+    ## Технічний стек
+    
+    Vue 3 · TypeScript · Vite · Pinia · Naive UI · UnoCSS · vue-i18n · Vitest · Playwright
+404:
+  notFound: '404 Сторінка не знайдена'
+  sorry: 'Вибачте, ця сторінка, схоже, не існує'
+  maybe: 'Можливо, кеш робить хитрощі, спробуйте примусово оновити сторінку?'
+  backHome: 'Повернутися на головну'
+favoriteButton:
+  remove: 'Вилучити з обраних'
+  add: 'Додати до обраних'
+toolCard:
+  new: Новий
+search:
+  label: Пошук
+tools:
+  categories:
+    favorite-tools: 'Ваші улюблені інструменти'
+    data-formatting: 'Форматування'
+    data-conversion: 'Конвертація'
+    diff: 'Порівняння'
+    encoding: 'Кодування'
+    api: 'API-довідник'

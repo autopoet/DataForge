@@ -1,0 +1,338 @@
+home:
+  categories:
+    newestTools: Newest tools
+    favoriteTools: 'Your favorite tools'
+    allTools: 'All the tools'
+    favoritesDndToolTip: 'Drag and drop to reorder favorites'
+  hero:
+    openWorkbench: 'Open the workbench'
+    openTypeGenerator: 'Generate TypeScript types'
+  toggleMenu: 'Toggle menu'
+  home: Home
+  uiLib: 'UI Lib'
+  nav:
+    about: 'About DataForge'
+    aboutLabel: 'About'
+    darkMode: 'Dark mode'
+    lightMode: 'Light mode'
+    mode: 'Toggle dark/light mode'
+about:
+  content: >-
+    # About DataForge
+
+    DataForge is a data workbench for frontend developers: paste a messy piece of data, then format, compare, convert formats and generate TypeScript types — all in one place.
+
+    This project is a second development of the open-source project IT-Tools (GPL-3.0). It keeps its engineering foundation (Vue 3, TypeScript, Vite, Naive UI, testing and deployment setup) while reorganizing the product around data processing and adding new capabilities such as JSON to TypeScript generation.
+
+    ## Features
+
+    - **Data workbench**: automatic format detection, one-click decoding of layered JSON-encoded strings, format / minify / convert views (YAML / TOML / XML / CSV), a TypeScript type view, file import & export, and history snapshots with diff.
+    - **TypeScript type generator**: derive nested interface / type declarations from JSON, with optional keys, literal unions and naming-collision handling.
+    - **Dedicated tools**: JSON / XML / YAML formatting, nine format converters, JSON & text diff, URL / Base64 / HTML-entities encoding, JWT parser, and HTTP status codes.
+
+    ## Roadmap
+
+    - Phase 2: structure inference engine — JSON Schema inference and mock data generation, sharing the analysis core with the type generator.
+    - Phase 3: performance validation and polish — large-input optimization and documentation.
+
+    ## Tech stack
+
+    Vue 3 · TypeScript · Vite · Pinia · Naive UI · UnoCSS · vue-i18n · Vitest · Playwright
+404:
+  notFound: '404 Not Found'
+  sorry: 'Sorry, this page does not seem to exist'
+  maybe: 'Maybe the cache is doing tricky things, try force-refreshing?'
+  backHome: 'Back home'
+copy:
+  tooltip: 'Copy to clipboard'
+  copied: 'Copied!'
+  success: 'Copied to the clipboard'
+  download: 'Download'
+favoriteButton:
+  remove: 'Remove from favorites'
+  add: 'Add to favorites'
+toolCard:
+  new: New
+openInWorkbench:
+  label: 'Open in workbench'
+search:
+  label: Search
+tools:
+  categories:
+    favorite-tools: 'Your favorite tools'
+    workbench: Workbench
+    generation: Generation
+    data-formatting: Formatting
+    data-conversion: Conversion
+    diff: Compare
+    encoding: Encoding
+    api: 'API helpers'
+
+  workbench:
+    title: Data workbench
+    description: Paste messy data once, then format, minify, convert and generate TypeScript types in one place.
+    inputPlaceholder: |-
+      {'{'}"code": 200, "data": {'{'}"list": [1, 2, 3]{'}'}, "msg": "ok"{'}'}
+    toolbar:
+      clear: Clear
+    format:
+      auto: Auto
+      json: JSON
+      yaml: YAML
+      toml: TOML
+      xml: XML
+      csv: CSV
+    status:
+      size: '{size} B · {lines} lines'
+      badgeHigh: '{format} detected'
+      badgeLow: '{format} detected · low confidence'
+      badgeOverride: '{format} (manual)'
+      parseError: 'Cannot parse as {format}: {error}'
+      lowConfidenceHint: Detection confidence is low — pick the format manually above to override.
+    views:
+      formatted: Format
+      minified: Minify
+      typescript: TypeScript
+      yaml: YAML
+      toml: TOML
+      xml: XML
+      csv: CSV
+      csvOptions:
+        flatten: Flatten nested fields
+      disabled:
+        noData: No parseable data yet — paste some data to enable this view.
+        text: Plain text has no structured data for this view.
+        csv: 'CSV input has no {view} view.'
+        sameFormat: Input is already in {view} format — no conversion needed.
+        notArrayOfObjects: The CSV view needs an array of objects.
+    decode:
+      banner: 'Input looks like a JSON-encoded string (~{count} layers)'
+      decodeOne: Decode one layer
+      decodeAll: Decode all
+    import:
+      label: Import file
+      dropHint: Release to import file
+      unsupportedType: 'Unsupported file type (supported: .json/.yaml/.toml/.xml/.csv/.txt)'
+      confirmTitle: Import large file
+      largeFileConfirm: The file is larger than 1MB — importing it may slow down the page. Continue?
+      confirm: Import anyway
+      cancel: Cancel
+      tooLarge: The file exceeds 10MB, beyond what the workbench can handle.
+    output:
+      empty: View output will appear here once a valid input is detected.
+      renderFailed: Failed to generate this view
+      copy: Copy
+      download: Download
+      openInTypeGenerator: Open in type generator
+    history:
+      open: 'History ({count})'
+      title: History snapshots
+      empty: No history yet — snapshots are recorded automatically as you edit the input.
+      quota: 'Used {used} / {max} · {size} KB total'
+      restore: Restore
+      compare: Compare
+      delete: Delete
+      clear: Clear history
+      truncated: 'Snapshot content was truncated (too large) — cannot restore or compare.'
+      clearConfirmTitle: Clear all history?
+      clearConfirmContent: 'All {count} history snapshots will be deleted. This cannot be undone.'
+      confirm: Confirm
+      cancel: Cancel
+      diffTitle: Snapshot vs. current input
+      diffUnavailable: Either the snapshot or the current input cannot be parsed as structured data, so they cannot be compared.
+      swap: Swap sides
+    copySuccess: Copied to the clipboard
+
+  type-generator:
+    title: TypeScript type generator
+    description: Generate TypeScript types from your JSON data
+    inputLabel: Your JSON
+    inputPlaceholder: |-
+      {'{'}
+        "name": "DataForge",
+        "users": [
+          {'{'} "id": 1, "role": "admin" {'}'},
+          {'{'} "id": 2, "role": "viewer" {'}'}
+        ]
+      {'}'}
+    outputLabel: Generated TypeScript types
+    invalidJson: Provided JSON is not valid.
+    openInWorkbench: Open in workbench
+    largeInputWarning: Input exceeds 1MB; type generation may be slow.
+    options:
+      rootName: Root type name
+      style: Output style
+      exportKeyword: Export keyword
+      literalUnionMax: Literal union limit
+
+  json-to-csv:
+    title: JSON to CSV
+    description: Convert JSON to CSV with automatic header detection.
+    inputLabel: Your raw JSON
+    inputPlaceholder: |-
+      [{'{'}"id": 1, "name": "ada"{'}'}, {'{'}"id": 2, "name": "linus"{'}'}]
+    outputLabel: CSV version of your JSON
+    flatten: Flatten nested objects
+    invalidJson: Provided JSON is not valid.
+
+  http-status-codes:
+    title: HTTP status codes
+    description: The list of all HTTP status codes, their name, and their meaning.
+
+  yaml-prettify:
+    title: YAML prettify and format
+    description: Prettify your YAML string into a friendly, human-readable format.
+    inputLabel: Your raw YAML
+    inputPlaceholder: |-
+      name: DataForge
+      active: true
+    outputLabel: Prettified version of your YAML
+    sortKeys: Sort keys
+    indentSize: Indent size
+    invalidYaml: Provided YAML is not valid.
+
+  base64-string-converter:
+    title: Base64 string encoder/decoder
+    description: Simply encode and decode strings into their base64 representation.
+
+  toml-to-yaml:
+    title: TOML to YAML
+    description: Parse and convert TOML to YAML.
+    inputLabel: Your TOML
+    inputPlaceholder: |-
+      name = "DataForge"
+      port = 8080
+    outputLabel: YAML from your TOML
+    invalidToml: Provided TOML is not valid.
+
+  json-to-yaml-converter:
+    title: JSON to YAML converter
+    description: Simply convert JSON to YAML with this online live converter.
+    inputLabel: Your JSON
+    inputPlaceholder: |-
+      {'{'}"name": "DataForge", "version": "1.0", "tags": ["json", "yaml"]{'}'}
+    outputLabel: YAML from your JSON
+    invalidJson: Provided JSON is not valid.
+
+  html-entities:
+    title: Escape HTML entities
+    description: Escape or unescape HTML entities (replace characters like <,>, &, " and \' with their HTML version)
+
+  json-prettify:
+    title: JSON prettify and format
+    description: Prettify your JSON string into a friendly, human-readable format.
+    inputLabel: Your raw JSON
+    inputPlaceholder: |-
+      {'{'}"name": "DataForge", "active": true{'}'}
+    outputLabel: Prettified version of your JSON
+    sortKeys: Sort keys
+    indentSize: Indent size
+    invalidJson: Provided JSON is not valid.
+
+  toml-to-json:
+    title: TOML to JSON
+    description: Parse and convert TOML to JSON.
+    inputLabel: Your TOML
+    inputPlaceholder: |-
+      name = "DataForge"
+      port = 8080
+    outputLabel: JSON from your TOML
+    invalidToml: Provided TOML is not valid.
+
+  xml-formatter:
+    title: XML formatter
+    description: Prettify your XML string into a friendly, human-readable format.
+    inputLabel: Your XML
+    inputPlaceholder: |-
+      <note><to>you</to><body>hi</body></note>
+    outputLabel: Formatted XML from your XML
+    collapseContent: Collapse content
+    indentSize: Indent size
+    invalidXml: Provided XML is not valid.
+
+  yaml-to-toml:
+    title: YAML to TOML
+    description: Parse and convert YAML to TOML.
+    inputLabel: Your YAML
+    inputPlaceholder: |-
+      name: DataForge
+      port: 8080
+    outputLabel: TOML from your YAML
+    invalidYaml: Provided YAML is not valid.
+
+  json-diff:
+    title: JSON diff
+    description: Compare two JSON objects and get the differences between them.
+    leftLabel: Your first JSON
+    leftPlaceholder: |-
+      {'{'}"id": 1, "status": "ok"{'}'}
+    rightLabel: Your JSON to compare
+    rightPlaceholder: |-
+      {'{'}"id": 1, "status": "error", "extra": true{'}'}
+    invalidJson: Invalid JSON format
+    onlyShowDifferences: Only show differences
+    sameResult: The provided JSONs are the same
+
+  jwt-parser:
+    title: JWT parser
+    description: Parse and decode your JSON Web Token (jwt) and display its content.
+
+  json-to-toml:
+    title: JSON to TOML
+    description: Parse and convert JSON to TOML.
+    inputLabel: Your JSON
+    inputPlaceholder: |-
+      {'{'}"name": "DataForge", "port": 8080, "tags": ["json", "toml"]{'}'}
+    outputLabel: TOML from your JSON
+    invalidJson: Provided JSON is not valid.
+
+  json-minify:
+    title: JSON minify
+    description: Minify and compress your JSON by removing unnecessary whitespace.
+    inputLabel: Your raw JSON
+    inputPlaceholder: |-
+      {'{'}"name": "DataForge", "tags": ["json"]{'}'}
+    outputLabel: Minified version of your JSON
+    invalidJson: Provided JSON is not valid.
+
+  yaml-to-json-converter:
+    title: YAML to JSON converter
+    description: Simply convert YAML to JSON with this online live converter.
+    inputLabel: Your YAML
+    inputPlaceholder: |-
+      name: DataForge
+      port: 8080
+    outputLabel: JSON from your YAML
+    invalidYaml: Provided YAML is not valid.
+
+  json-to-xml:
+    title: JSON to XML
+    description: Convert JSON to XML.
+    inputLabel: Your JSON content
+    inputPlaceholder: |-
+      {'{'}"note": {'{'}"to": "you", "from": "me"{'}'}{'}'}
+    outputLabel: Converted XML
+    invalidJson: Provided JSON is not valid.
+
+  xml-to-json:
+    title: XML to JSON
+    description: Convert XML to JSON.
+    inputLabel: Your XML content
+    inputPlaceholder: |-
+      <note><to>you</to><from>me</from></note>
+    outputLabel: Converted JSON
+    invalidXml: Provided XML is not valid.
+
+  text-diff:
+    title: Text diff
+    description: Compare two texts and see the differences between them.
+    leftLabel: Original text
+    leftPlaceholder: |-
+      const name = 'alice';
+    rightLabel: Modified text
+    rightPlaceholder: |-
+      const name = 'alice bob';
+
+  url-encoder:
+    title: Encode/decode URL-formatted strings
+    description: Encode text to URL-encoded format (also known as "percent-encoded"), or decode from it.
