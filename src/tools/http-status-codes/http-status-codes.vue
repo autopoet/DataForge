@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import { codesByCategories } from './http-status-codes.constants';
+import { codesByCategoriesZh } from './http-status-codes.constants.zh';
 import { useFuzzySearch } from '@/composable/fuzzySearch';
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const search = ref('');
 
+const codesByCategoriesLocalized = computed(() => locale.value === 'zh' ? codesByCategoriesZh : codesByCategories);
+
 const { searchResult } = useFuzzySearch({
   search,
-  data: codesByCategories.flatMap(({ codes, category }) => codes.map(code => ({ ...code, category }))),
+  data: computed(() => codesByCategoriesLocalized.value.flatMap(({ codes, category }) => codes.map(code => ({ ...code, category })))),
   options: {
     keys: [{ name: 'code', weight: 3 }, { name: 'name', weight: 2 }, 'description', 'category'],
   },
@@ -16,7 +19,7 @@ const { searchResult } = useFuzzySearch({
 
 const codesByCategoryFiltered = computed(() => {
   if (!search.value) {
-    return codesByCategories;
+    return codesByCategoriesLocalized.value;
   }
 
   return [{ category: t('tools.http-status-codes.searchResults'), codes: searchResult.value }];

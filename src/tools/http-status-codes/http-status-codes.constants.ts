@@ -1,12 +1,16 @@
-export const codesByCategories: {
+export interface HttpStatusCode {
+  code: number
+  name: string
+  description: string
+  type: 'HTTP' | 'WebDav'
+}
+
+export interface HttpStatusCategory {
   category: string
-  codes: {
-    code: number
-    name: string
-    description: string
-    type: 'HTTP' | 'WebDav'
-  }[]
-}[] = [
+  codes: HttpStatusCode[]
+}
+
+export const codesByCategories: HttpStatusCategory[] = [
   {
     category: '1xx informational response',
     codes: [
