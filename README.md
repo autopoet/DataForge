@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <a href="https://dataforge.autopoet.cn/"><strong>在线 Demo · Live Demo</strong></a>
+  <a href="https://dataforge.autopoet.cn/"><strong>Live Demo</strong></a>
 </p>
 
 ---
