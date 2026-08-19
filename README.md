@@ -23,11 +23,11 @@
 
 ## 这个项目解决什么问题
 
-前端开发者在联调、排查、写配置时，高频地做这些事：把乱糟糟的 JSON 格式化、压缩、对比两次返回、在 JSON / YAML / TOML / XML / CSV 之间转换、把接口返回变成 TypeScript 类型。目前这些操作分散在多个在线站点，数据要来回复制粘贴。
+前端开发者在联调、排查、写配置时，高频地做这些事：把乱糟糟的 JSON 格式化、压缩，对比两次接口返回的结果，在 JSON / YAML / TOML / XML / CSV 之间转换，把接口返回变成 TypeScript 类型。这些操作目前分散在多个在线站点，数据需要反复复制粘贴。
 
-DataForge 把这些能力收敛到一个产品里：**一个数据工作台，围绕同一份数据提供多种处理视图**（格式化 / 压缩 / 类型生成 / 多格式转换 / CSV 导出），并附带少量专项工具页。工作台与专项页之间通过 handoff 机制无缝接续：工作台的 TypeScript 视图可以把当前数据一键带给类型生成器，类型生成器、对比、各转换页、文本对比也能把数据带回工作台继续处理——同一份数据，多个入口。
+DataForge 把这些能力收敛到一个产品里：**一个数据工作台，围绕同一份数据提供多种处理视图**（格式化 / 压缩 / 类型生成 / 多格式转换 / CSV 导出），并附带少量专项工具页。工作台与专项页之间通过 handoff（数据交接）机制无缝衔接：工作台的 TypeScript 视图可以把当前数据一键交给类型生成器；类型生成器、JSON 对比、各转换页、文本对比也能把数据带回工作台继续处理——同一份数据，多个入口。
 
-> 本项目基于开源项目 [IT-Tools](https://github.com/CorentinTh/it-tools)（GPL-3.0）二次开发：保留其 Vue 3 / TypeScript / Vite / Naive UI 工程底座，围绕"数据处理"重新组织产品，并新增了数据工作台、快照对比、JSON → TypeScript 类型生成等能力。
+> 本项目基于开源项目 [IT-Tools](https://github.com/CorentinTh/it-tools)（GPL-3.0）二次开发：保留其 Vue 3 / TypeScript / Vite / Naive UI 工程底座，围绕“数据处理”重新组织产品，并新增了数据工作台、快照对比、JSON → TypeScript 类型生成等能力。
 
 ## 功能一览
 
@@ -35,17 +35,17 @@ DataForge 把这些能力收敛到一个产品里：**一个数据工作台，�
 - **TypeScript 类型生成器**：从 JSON 推导嵌套 interface / type 声明（可选字段、字面量联合、数组元素键并集、命名冲突处理）
 - **数据格式化**：JSON 格式化（缩进 / 键排序 / 校验）、JSON 压缩、XML 格式化、YAML 格式化
 - **格式转换**：JSON ↔ YAML / TOML / XML、JSON → CSV（嵌套 flatten）、TOML ↔ YAML
-- **对比**：JSON Diff（自研 diff-viewer 树形差异渲染）、文本 Diff（Monaco 差异编辑器，实时输入，输入持久化）
+- **对比**：JSON Diff（自研 diff-viewer 树形差异渲染）、文本 Diff（Monaco 差异编辑器，实时比对、输入持久化）
 - **编码解码**：URL 编码、Base64 字符串、HTML 实体
 - **联调参考**：JWT 解析、HTTP 状态码
 
 ## 架构
 
-所有视图不直接消费原始文本，而是经过统一的「解析 → JS 值（IR）→ 序列化」管线：
+所有输出视图不直接消费原始文本，而是统一走「解析 → JS 值（IR）→ 序列化」管线：
 
 ```
 rawInput ──检测 / 手动指定──▶ detectFormat ──▶ parseToData ──▶ IR（纯 JSON 兼容 JS 值）
-                                ▲                  (M1 / M2, 纯函数 + 单测)
+                                ▲                  （M1 / M2，纯函数 + 单测）
                                 │
                                 └─ 是多层编码 JSON? ─▶ DecodeBanner 逐层解码 ─▶ 写回 IR
 
@@ -72,22 +72,22 @@ rawInput 变化 ──2s 防抖──▶ pushSnapshot ──▶ snapshots[]（�
 
 ```
 src/
-  tools/                # 每个工具一个文件夹（index.ts 元数据 + Tool.vue + service + 测试）
-    index.ts            # toolsByCategory 集中注册，路由 / 侧边栏 / 命令面板 / 收藏自动生成
-    workbench/          # 数据工作台（本身也是一个注册工具，path: /workbench）
-      workbench.store.ts# 状态 + 快照 + localStorage 持久化（2s 防抖 / 去重 / 配额降级）
-      components/       # InputPanel / OutputViews / ViewToolbar / DecodeBanner
-                        # FileDropZone / HistoryTimeline / SnapshotDiffModal
-      services/         # format-detect / deep-decode / convert / csv（纯函数 + 单测）
-      views/            # 视图注册表 registry.ts + 6 个 view 描述符
-    type-generator/     # JSON → TypeScript（service + 页面 + 单测）
-  ui/                   # 自研 c-* 组件库（含暗 / 亮主题）
-  composable/           # 共享组合式函数（useValidation / useCopy / useStorage 持久化 / downloadTextFile 等）
-  modules/              # 命令面板（Ctrl+K 搜索）、i18n、tracker
-  stores/               # Pinia：tools（收藏）、style（主题）
-  layouts/              # base 布局 + tool 布局
-  pages/                # 首页 / 关于 / 404
-locales/                # 语言字典（界面提供中文 / English，仓库保留完整语言包）
+  tools/                  # 每个工具一个文件夹（index.ts 元数据 + Tool.vue + service + 测试）
+    index.ts              # toolsByCategory 集中注册，路由 / 侧边栏 / 命令面板 / 收藏自动生成
+    workbench/            # 数据工作台（本身也是一个注册工具，path: /workbench）
+      workbench.store.ts  # 状态 + 快照 + localStorage 持久化（2s 防抖 / 去重 / 配额降级）
+      components/         # InputPanel / OutputViews / ViewToolbar / DecodeBanner
+                          # FileDropZone / HistoryTimeline / SnapshotDiffModal
+      services/           # format-detect / deep-decode / convert / csv（纯函数 + 单测）
+      views/              # 视图注册表 registry.ts + 6 个 view 描述符
+    type-generator/       # JSON → TypeScript（service + 页面 + 单测）
+  ui/                     # 自研 c-* 组件库（含暗 / 亮主题）
+  composable/             # 共享组合式函数（useValidation / useCopy / useStorage 持久化 / downloadTextFile 等）
+  modules/                # 命令面板（Ctrl+K 搜索）、i18n、tracker
+  stores/                 # Pinia：tools（收藏）、style（主题）
+  layouts/                # base 布局 + tool 布局
+  pages/                  # 首页 / 关于 / 404
+locales/                  # 语言字典（界面提供中文 / English，仓库保留完整语言包）
 ```
 
 ## 技术栈
@@ -106,10 +106,10 @@ pnpm test:e2e     # 端到端测试（Playwright）
 pnpm lint         # ESLint
 ```
 
-Windows 注意项：
+Windows 用户注意：
 
-- `CI=true pnpm test:unit` 否则 vitest 进入 watch 模式会挂起；windows 下 `pnpm build` 已直接可用（无需额外环境变量）。
-- e2e 需要本机 Playwright 浏览器；官方 CDN 直连慢时用镜像安装：`PLAYWRIGHT_DOWNLOAD_HOST=https://cdn.npmmirror.com/binaries/playwright npx playwright install chromium`。
+- `CI=true pnpm test:unit`：否则 vitest 会进入 watch 模式并挂起；Windows 下 `pnpm build` 可直接使用（无需额外环境变量）。
+- e2e 需要本机安装 Playwright 浏览器；官方 CDN 直连慢时可用镜像安装：`PLAYWRIGHT_DOWNLOAD_HOST=https://cdn.npmmirror.com/binaries/playwright npx playwright install chromium`。
 
 ## 测试
 
@@ -119,7 +119,7 @@ Windows 注意项：
 
 ## 性能
 
-DataForge 围绕"检测 → 解析 → IR → 序列化"的中间表示（IR）管线设计。计算层在任何输入规模下都很快；可见的成本集中在大输出视图的语法高亮渲染。
+DataForge 围绕“检测 → 解析 → IR → 序列化”的中间表示（IR）管线设计。计算层在任何输入规模下都很快；可感知的成本集中在大输出视图的语法高亮渲染。
 
 | 输入规模 | 体验 | 防护 |
 |---|---|---|
@@ -130,7 +130,7 @@ DataForge 围绕"检测 → 解析 → IR → 序列化"的中间表示（IR）�
 
 实测（2026-08-17，1MB 输入）：工作台计算层 <400ms，而 1MB 格式化视图在普通 Chromium 上渲染约 9–10s——渲染比计算慢约 20–25×。线上 Demo 跑的是同一构建。
 
-值得一读的延迟工程点：**输入防抖**——打字时不会触发解析，300ms 停顿后整批工作才跑一次（1MB 时检测 + 解析 <400ms），而不是每敲一个键跑一遍；**视图惰性渲染**——`computed` 延迟求值，且只有激活的 Tab 会调用 `render`，所以 5MB 输入可以停在便宜的 TypeScript 视图里，根本不会碰重的输出视图；**导入护栏**——文件导入按大小分级（>1MB 确认 / >10MB 拒绝），在源头拦住最坏情况。
+值得一提的延迟设计：**输入防抖**——打字时不会触发解析，停顿 300ms 后整批工作才执行一次（1MB 时检测 + 解析 <400ms），而不是每敲一个键跑一遍；**视图惰性渲染**——`computed` 延迟求值，且只有激活的 Tab 会调用 `render`，所以 5MB 输入可以停在开销小的 TypeScript 视图里，完全不碰重的输出视图；**导入护栏**——文件导入按大小分级（>1MB 确认 / >10MB 拒绝），在源头拦住最坏情况。
 
 ## 二次开发（新增一个工具）
 
